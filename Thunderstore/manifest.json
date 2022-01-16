@@ -1,0 +1,9 @@
+{
+    "name": "BetterChat",
+    "version_number": "1.0.0",
+    "website_url": "",
+    "description": "Chat panel improvements",
+    "dependencies": [
+        "BepInEx-BepInExPack_Outward-5.4.8"
+    ]
+}
