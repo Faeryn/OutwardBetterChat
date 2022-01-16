@@ -1,5 +1,6 @@
 # Better Chat
 
+## Features
 Adds the following features to the chat panel:
 - Ability to set the fade out delay (default is 15 seconds)
 - Ability to set the position
@@ -13,3 +14,11 @@ Planned features:
 - Mod compatibility (some mod keybinds ignore that the chat is open)
 - Ability to change font size
 - Ability to link items in chat
+
+## Changelog
+### v1.0.1
+- Fade out time config description fix
+- Scroll only when the chat input is visible
+### v1.0.0
+- Ability to set chat panel fade out delay (default is 15 seconds)
+- Ability to set chat panel position via config
