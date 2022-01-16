@@ -26,4 +26,22 @@ namespace BetterChat.Patches {
 			ChatPanelUtils.UpdateAll(__instance);
 		}
 	}
+
+	[HarmonyPatch(typeof(ChatPanel), nameof(ChatPanel.ShowInput))]
+	public class ChatPanel_ShowInput {
+		[HarmonyPrefix]
+		static void Prefix(ChatPanel __instance) {
+			__instance.VerticalScrollSpeedModifier = 0.1f;
+			__instance.HorizontalScrollSpeedModifier = 5f;
+		}
+	}
+	
+	[HarmonyPatch(typeof(ChatPanel), nameof(ChatPanel.HideInput))]
+	public class ChatPanel_HideInput {
+		[HarmonyPostfix]
+		static void Postfix(ChatPanel __instance) {
+			__instance.VerticalScrollSpeedModifier = 0f;
+			__instance.HorizontalScrollSpeedModifier = 0f;
+		}
+	}
 }
