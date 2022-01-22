@@ -4,6 +4,7 @@ using BepInEx.Logging;
 using HarmonyLib;
 using System;
 using BetterChat.Patches;
+using UnityEngine.UI;
 
 namespace BetterChat {
 	[BepInPlugin(GUID, NAME, VERSION)]
@@ -15,6 +16,7 @@ namespace BetterChat {
 		internal static ManualLogSource Log;
 		
 		public static ConfigEntry<float> FadeOutTime;
+		public static ConfigEntry<int> ChatFontSize;
 		public static ConfigEntry<float> ChatPanelPosX;
 		public static ConfigEntry<float> ChatPanelPosY;
 
@@ -23,6 +25,10 @@ namespace BetterChat {
 			Log.LogMessage($"Starting {NAME} {VERSION}");
 			InitializeConfig();
 			new Harmony(GUID).PatchAll();
+		}
+
+		private void Start() {
+			ChatPanelUtils.UpdatePrefabFontSize();
 		}
 
 		public void ApplyToChatPanels(Action<ChatPanel> panelFunc) {
@@ -35,6 +41,11 @@ namespace BetterChat {
 			FadeOutTime = Config.Bind(DISPLAY_NAME, "Fade Out Time", 15f, "Chat fade out time in seconds");
 			FadeOutTime.SettingChanged += (sender, args) => {
 				ApplyToChatPanels(ChatPanelUtils.UpdateTimeBeforeFadeOut);
+			};
+			ChatFontSize = Config.Bind(DISPLAY_NAME, "Chat Font Size", 19, "Chat font size");
+			ChatFontSize.SettingChanged += (sender, args) => {
+				ChatPanelUtils.UpdatePrefabFontSize();
+				ApplyToChatPanels(ChatPanelUtils.UpdateFontSize);
 			};
 			ChatPanelPosX = Config.Bind(DISPLAY_NAME, "Chat panel position X", 0f, "Chat panel horizontal position");
 			ChatPanelPosX.SettingChanged += (sender, args) => {
