@@ -350,5 +350,6 @@ MigrationBackup/
 .ionide/
 
 modpacker.py
-bin/
 release/
+.idea/
+lib/
