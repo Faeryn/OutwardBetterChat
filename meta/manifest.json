@@ -2,7 +2,7 @@
     "name": "BetterChat",
     "author": "Faeryn",
     "version_number": "1.0.1",
-    "website_url": "",
+    "website_url": "https://github.com/Faeryn/OutwardBetterChat",
     "description": "Chat panel improvements",
     "dependencies": [
         "BepInEx-BepInExPack_Outward-5.4.8"
