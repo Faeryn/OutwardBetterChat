@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System;
+using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using BetterChat.Extensions;
@@ -30,9 +31,12 @@ namespace BetterChat {
 			ChatPanelExtensions.UpdatePrefabFontSize();
 		}
 
-		public void ApplyToChatPanels(Action<ChatPanel> panelFunc) {
+		public static void ApplyToChatPanels(Action<ChatPanel> panelFunc) {
 			foreach (Character character in CharacterManager.Instance.Characters.Values) {
-				panelFunc(character.CharacterUI.ChatPanel);
+				if (character != null || character.CharacterUI != null || character.CharacterUI.ChatPanel != null) {
+					panelFunc(character.CharacterUI.ChatPanel);
+				}
+				
 			}
 		}
 
