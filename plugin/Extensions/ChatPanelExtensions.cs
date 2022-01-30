@@ -10,6 +10,12 @@ namespace BetterChat.Extensions {
 		private static FieldInfo chatEntry_lblMessage = AccessTools.Field(typeof(ChatEntry), "m_lblMessage");
 		private static FieldInfo chatEntry_lblPlayerName = AccessTools.Field(typeof(ChatEntry), "m_lblPlayerName");
 		private static FieldInfo chatPanel_lblMessage = AccessTools.Field(typeof(ChatPanel), "m_messageArchive");
+		private static FieldInfo chatPanel_chatEntry = AccessTools.Field(typeof(ChatPanel), "m_chatEntry");
+
+		public static bool IsInputFocused(this ChatPanel chatPanel) {
+			InputField inputField = (InputField) chatPanel_chatEntry.GetValue(chatPanel);
+			return inputField.isFocused;
+		}
 		
 		public static void UpdateTimeBeforeFadeOut(this ChatPanel chatPanel) {
 			chatPanel.TimeBeforeFadeOut = Math.Max(BetterChat.FadeOutTime.Value, 0f);

@@ -83,6 +83,10 @@
       <HintPath>..\packages\SemanticVersioning.2.0.0\lib\net45\SemanticVersioning.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SideLoader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Outward.SideLoader.3.5.6\lib\net472\SideLoader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -340,6 +344,7 @@
     <Compile Include="BetterChat.cs" />
     <Compile Include="Extensions\ChatPanelExtensions.cs" />
     <Compile Include="Patches\ChatPanel.cs" />
+    <Compile Include="Patches\KeybindInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

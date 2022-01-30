@@ -1,13 +1,11 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
-using HarmonyLib;
-using System;
 using BetterChat.Extensions;
-using BetterChat.Patches;
-using UnityEngine.UI;
+using HarmonyLib;
 
 namespace BetterChat {
+	[BepInDependency("com.sinai.SideLoader", BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInPlugin(GUID, NAME, VERSION)]
 	public class BetterChat : BaseUnityPlugin {
 		public const string GUID = "faeryn.betterchat";
