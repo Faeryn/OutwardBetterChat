@@ -11,7 +11,7 @@ namespace BetterChat {
 	public class BetterChat : BaseUnityPlugin {
 		public const string GUID = "faeryn.betterchat";
 		public const string NAME = "BetterChat";
-		public const string VERSION = "1.1.0";
+		public const string VERSION = "1.1.1";
 		private const string DISPLAY_NAME = "Better Chat";
 		internal static ManualLogSource Log;
 		
@@ -36,7 +36,6 @@ namespace BetterChat {
 				if (character != null || character.CharacterUI != null || character.CharacterUI.ChatPanel != null) {
 					panelFunc(character.CharacterUI.ChatPanel);
 				}
-				
 			}
 		}
 
