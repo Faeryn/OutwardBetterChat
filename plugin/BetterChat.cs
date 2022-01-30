@@ -3,6 +3,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using System;
+using BetterChat.Extensions;
 using BetterChat.Patches;
 using UnityEngine.UI;
 
@@ -28,7 +29,7 @@ namespace BetterChat {
 		}
 
 		private void Start() {
-			ChatPanelUtils.UpdatePrefabFontSize();
+			ChatPanelExtensions.UpdatePrefabFontSize();
 		}
 
 		public void ApplyToChatPanels(Action<ChatPanel> panelFunc) {
@@ -40,20 +41,20 @@ namespace BetterChat {
 		private void InitializeConfig() {
 			FadeOutTime = Config.Bind(DISPLAY_NAME, "Fade Out Time", 15f, "Chat fade out time in seconds");
 			FadeOutTime.SettingChanged += (sender, args) => {
-				ApplyToChatPanels(ChatPanelUtils.UpdateTimeBeforeFadeOut);
+				ApplyToChatPanels(ChatPanelExtensions.UpdateTimeBeforeFadeOut);
 			};
 			ChatFontSize = Config.Bind(DISPLAY_NAME, "Chat Font Size", 19, "Chat font size");
 			ChatFontSize.SettingChanged += (sender, args) => {
-				ChatPanelUtils.UpdatePrefabFontSize();
-				ApplyToChatPanels(ChatPanelUtils.UpdateFontSize);
+				ChatPanelExtensions.UpdatePrefabFontSize();
+				ApplyToChatPanels(ChatPanelExtensions.UpdateFontSize);
 			};
 			ChatPanelPosX = Config.Bind(DISPLAY_NAME, "Chat panel position X", 0f, "Chat panel horizontal position");
 			ChatPanelPosX.SettingChanged += (sender, args) => {
-				ApplyToChatPanels(ChatPanelUtils.UpdateLocalPosition);
+				ApplyToChatPanels(ChatPanelExtensions.UpdateLocalPosition);
 			};
 			ChatPanelPosY = Config.Bind(DISPLAY_NAME, "Chat panel position Y", 0f, "Chat panel vertical position");
 			ChatPanelPosY.SettingChanged += (sender, args) => {
-				ApplyToChatPanels(ChatPanelUtils.UpdateLocalPosition);
+				ApplyToChatPanels(ChatPanelExtensions.UpdateLocalPosition);
 			};
 		}
 	}
