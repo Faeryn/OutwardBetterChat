@@ -344,7 +344,6 @@
     <Compile Include="BetterChat.cs" />
     <Compile Include="Extensions\ChatPanelExtensions.cs" />
     <Compile Include="Patches\ChatPanel.cs" />
-    <Compile Include="Patches\KeybindInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,6 @@ Adds the following features to the chat panel:
 - Ability to set the fade out delay (default is 15 seconds)
 - Ability to set the position
 - Ability to change chat font size
-- Suppresses (most) custom keybinds while the chat is open (mod compatibility)
 
 It's strongly recommended to use Outward Config Manager.
 
@@ -16,6 +15,9 @@ Planned features:
 - Ability to link items in chat
 
 ## Changelog
+
+### v1.1.2
+- Removed custom keybind fix, because it's now in SideLoader
 
 ### v1.1.1
 - Custom keybinds no longer trigger while the chat input is open
