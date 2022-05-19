@@ -16,6 +16,9 @@ Planned features:
 
 ## Changelog
 
+### v1.1.3
+- Definitive Edition support (vanilla might still work, untested)
+
 ### v1.1.2
 - Removed custom keybind fix, because it's now in SideLoader
 
