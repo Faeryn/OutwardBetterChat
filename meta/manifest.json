@@ -1,7 +1,7 @@
 {
     "name": "BetterChat",
     "author": "Faeryn",
-    "version_number": "1.1.3",
+    "version_number": "1.2.0",
     "website_url": "https://github.com/Faeryn/OutwardBetterChat",
     "description": "Chat panel improvements",
     "dependencies": [
